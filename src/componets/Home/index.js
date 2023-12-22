@@ -1,93 +1,130 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import AnimatedLetters from '../AnimatedLetters';
-import D3 from '../../assets/images/D (doble) logo.svg'
-import './index.scss';
-import Loader from 'react-loaders';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCss3, faGithub, faHtml5, faJs, faReact, faSass } from '@fortawesome/free-brands-svg-icons'
-
-
+import React from "react";
+import "./index.scss";
+import { Link } from "react-router-dom";
+import {
+  RiNumber1,
+  RiNumber2,
+  RiNumber3,
+  RiNumber4,
+  RiNumber5,
+  RiNumber6,
+  RiNumber7,
+  RiNumber8,
+  RiNumber9,
+  RiNumber0,
+} from "react-icons/ri";
 
 const Home = () => {
-  
-    const [letterClass, setLetterClass] =  useState('text-animate')
-    const nameArray = ['','a','v','i','d']
-    const jobArray = ['W','e','b', ' ','D','e','v','e','l','o','p','e','r']
-    
-    // useEffect(() => {
-    //     return setTimeout(() => {
-    //       setLetterClass('text-animate-hover')
-    //     }, 4000)
-    //   }, [])
-    useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            setLetterClass('text-animate-hover');
-        }, 4000);
-    
-        // Limpiar el temporizador cuando el componente se desmonta o cuando la clase ya se ha cambiado
-        return () => clearTimeout(timeoutId);
-    }, []);
-    
+  return (
+    <>
+      <div className="text">
+        <h2>Booleans, Operators, Date</h2>
+      </div>
 
-    return (
-     <> 
-        <div className='container home-page'>
-            <div className='text-zone'>
-                <h1>
-                    <span className={letterClass}>H</span>
-                    <span className={`${letterClass} _12`}>i,</span>
-                    <br/> 
-                    <span className={`${letterClass} _13`}>I</span>
-                    <span className={`${letterClass} _14`}>'m</span>
-              
-                <img   className="letra-d"  src={D3} alt='letraD'/>
-                <AnimatedLetters letterClass={letterClass}
-                strArray={nameArray}
-                idx={15}/>
-                <br/>
-                 <AnimatedLetters letterClass={letterClass}
-                strArray={jobArray}
-                idx={22}/>
-                <br/>
-                </h1>
-                <h2>Full-stack web developer</h2>
-                <div className='link-contact'>
-
-                <Link to="/contact" className='flat-buttom'>CONTACT ME</Link>
-                </div>
+      <div className="container">
+        <div className="card">
+          <Link to="../Level1">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber1 />
             </div>
-           
+          </Link>
+          <div></div>
         </div>
-        
-        <div className='stage-cube-cont'>
-              <div className='cubespinner'>
-                <div className='face1'>
-                  <FontAwesomeIcon icon={faHtml5} color="#F06529"/>
-                </div>
-                <div className='face2'>
-                  <FontAwesomeIcon icon={faCss3} color="#28A4D9"/>
-                </div>
-                <div className='face3'>
-                  <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-                </div>
-                <div className='face4'>
-                  <FontAwesomeIcon icon={faJs} color="#EFD81D" />
-                </div>
-                <div className='face5'>
-                <FontAwesomeIcon icon= {faGithub} color="#EC4D28"/>
-                </div>
-                <div className='face6'>
-                <FontAwesomeIcon icon= {faSass}  color="#FF69B4"/>
-                </div>
+
+        <div className="card">
+          <Link to="../Level2">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber2 />
+            </div>
+          </Link>
+        </div>
+
+        <div className="card">
+          <p>Exercise: </p>
+          <Link to="../Level3">
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber3 />
+            </div>
+          </Link>
+        </div>
+
+        <div className="card">
+          {/* Nuevo enlace y ruta */}
+          <Link to="../Level4">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber4 />
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="card">
+          <Link to="../Level5">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber5 />
+            </div>
+          </Link>
+          <div></div>
+        </div>
+
+        <div className="card">
+          <Link to="../Level6">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber6 />
+            </div>
+          </Link>
+        </div>
+
+        <div className="card">
+          <Link to="../Level7">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber7 />
+            </div>
+          </Link>
+        </div>
+
+        <div className="card">
+          {/* Nuevo enlace y ruta */}
+          <Link to="../Level8">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber8 />
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div className="container">
+        <div className="card">
+          <Link to="../Level9">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "15em" }}>
+              <RiNumber9 />
+            </div>
+          </Link>
+          <div></div>
+        </div>
+
+        <div className="card">
+          <Link to="../Level10">
+            <p>Exercise: </p>
+            <div style={{ fontSize: "12.5em" }}>
+              <div className="number10">
+                <RiNumber1 />
+                <RiNumber0 />
               </div>
             </div>
-       
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+};
 
-
-      <Loader type="pacman"/>
-        </>
-    )
-}
-
-export default Home
+export default Home;

@@ -1,282 +1,77 @@
-
-.home-page {
-
-  .text-zone {
-      position: absolute;
-      left: 10%;
-      top: 30%;
-      width: 40%;
-      max-height: 90%;
-  }
-
-  h1 {
-       color: #fff;
-       font-size: 53px;
-       margin: 0;
-       font-family: 'Coolvetica';
-       font-weight: 400;
-
-
-       &:hover::before {
-        color: lighten($color: #ffd700, $amount: 60);
-    }
-       
-
-      &::before {
-          content: '<h1>';
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-          color: #ffd700;
-          font-size: 18px;
-          position: absolute;
-          margin-top: -40px;
-          left: 15px;
-          opacity: 0.6;
-          transition: color 0.3s ease;
-      }
-
-      &::after {
-          content: '<h2>';
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-          color: #ffd700;
-          font-size: 18px;
-          position: absolute;
-          margin-top: 18px;
-          margin-left: 290px;
-          animation: fadeIn 1s 1.7s backwards;
-          opacity: 0.6;
-          
-      }
-
-      img {
-        
-          width: 32px;
-          height: auto;
-          animation: rotateIn 1s linear both;
-          animation-delay: 1.4s;
-          height: 144px;
-          width: 114px;
-        }     
-  }
-
+.text {
+  text-align: center;
   h2 {
-      color: #8d8d8d;
-      margin-top: 20px;
-      font-weight: 100;
-      font-size: 11px;
-      font-family: sans-serif;
-      letter-spacing: 3px;
-      animation: fadeIn 1s 1.8s backwards;
-  }
-
-  .flat-buttom {
-      color: #ffd700;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      font-family: sans-serif;
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1px solid #ffd700;
-      margin-top: 25px;
-      float: left;
-      animation: fadeIn 1s 1.8s backwards;
-      white-space: nowrap;
-      transition: background 0.3s ease, color 0.3s ease;
-
-      &:hover {
-          background: #ffd700;
-          color: #333;
-      }
-
+    font-size: 33px;
+    margin: auto;
+    color: white;
   }
 }
 
-.stage-cube-cont {
-  width: 50%;
-  height: 100%;
-  top: -100px;
-  padding-top: 18%;
-  margin-left: 0;
-  position: absolute;
-  right: 0;
-  overflow: hidden;
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+.logoCard {
+  display: inline;
+  width: 20px;
+}
 
-.cubespinner {
-  animation-name: spincube;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 12s;
-  transform-style: preserve-3d;
-  transform-origin: 130px 130px 0;
-  margin-left: calc(50% - 100px);  
+.card img {
+  width: 200px;
+}
 
-  div {
-    position: absolute;
-    width: 337px;
-    height:337px;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.4);
-    text-align: center;
-    font-size: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 20px 0px lightyellow;
-  }
+.card {
+  display: flex;
+  flex-direction: column; /* Cambiar a dirección de columna */
+  align-items: center;
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230, 230, 230);
+  text-align: center;
+  padding: 10px;
+  border: 1px solid rgb(230, 230, 230);
+  overflow: hidden; /* Evitar que el contenido se desborde */
 
-  .face1 {
-    transform: translateZ(170px);
-    color: #dd0031;
-  }
-  .face2 {
-    transform: rotateY(90deg) translateZ(170px);
-    color: #f06529;
-  }
-  .face3 {
-    transform: rotateY(90deg) rotateX(90deg) translateZ(170px);
-    color: #28a4d9;
-  }
-  .face4 {
-    transform: rotateY(180deg) rotateZ(90deg) translateZ(170px);
-    color: #5ed4f4;
-  }
-  .face5 {
-    transform: rotateY(-90deg) rotateZ(90deg) translateZ(170px);
-    color: #efd81d;
-  }
-  .face6 {
-    transform: rotateX(-90deg) translateZ(170px);
-    color: #ec4d28;
+  p {
+    max-height: 3em; /* Limitar la altura máxima del párrafo */
+    margin: 10px 0; /* Añadir margen superior e inferior */
+    opacity: 0.5;
+    color: antiquewhite;
   }
 }
 
-@keyframes spincube {
-  from,
-  to {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+.cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .card {
+    margin-bottom: 15px;
   }
-  16% {
-    transform: rotateY(-90deg) rotateZ(90deg);
+}
+
+@media (max-width: 500px) {
+  .cards {
+    justify-content: space-around;
   }
-  33% {
-    transform: rotateY(-90deg) rotateX(90deg);
-  }
-  50% {
-    transform: rotateY(-180deg) rotateZ(90deg);
-  }
-  66% {
-    transform: rotateY(-270deg) rotateX(90deg);
-  }
-  83% {
-    transform: rotateX(90deg);
-  }
+}
+
+.number10 {
   
+  display: flex;
+  margin: 45px;
+  padding: 5px;
+ 
+  align-items: center;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
-
-
-/////mq for the tlf
-
-@media screen and (max-width: 844px) {
-
-  .stage-cube-cont {
-    
-    width: 110%;
-    height: 100%;
-    top: +400px;
-    left: +10px;
-    margin-left: 0;
-    position: absolute;
-    
-    z-index: -1;
-  }  
-  
-  .home-page {
-    
-
-
-    h1 {
-      color: #b72d2d;
-      font-size: 53px;
-      margin: 0;
-      font-family: 'Coolvetica';
-      font-weight: 400;
-
-
-      &:hover::before {
-       color: lighten($color: #ffd700, $amount: 60);
-   }
-      
-  }
-    .text-zone {
-     
-      left: +125px;
-      top:+5%;
-    }
-    .home-page {
-
-      .text-zone {
-          position: absolute;
-          left: 10%;
-          top: 30%;
-          width: 40%;
-          max-height: 90%;
-      }
-  
-  
-  }
-}
-
-}
-
-
-
-@media screen and (max-width: 844px) {
-
-  
-  .home-page {
-
-        position: absolute;
-        left: -40px;
-        
-         
-          
-    
-
-
-    h1 {
-      color: #f0e7e7;
-      font-size: 33px;
-      margin: 0;
-      font-family: 'Coolvetica';
-      font-weight: 400;
-     
-      padding-left: 22px;
-      
-
-
-      &:hover::before {
-       color: lighten($color: #ffd700, $amount: 60);
-   }
-      
-  }
-   
-    .home-page {
-
-      .text-zone {
-          position: absolute;
-          left: 110%;
-          top: 1%;
-          width: 30%;
-          max-height: 90%;
-      }
-  
-  
-  }
-}
-
-}
-
-
-
