@@ -95,8 +95,11 @@ const Level = () => {
       <div className="displayImg">
         {showImages && (
           <>
+              <p>html</p>
             <img className="max" src={So11} alt="developer" />
+              <p>JavaScript</p>
             <img className="max" src={So11j} alt="developer" />
+        
           </>
         )}
       </div>

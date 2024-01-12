@@ -98,8 +98,6 @@ const Home = () => {
             <p>Card2</p>
           </Link>
         </div>
-
-     
       </div>
 
      

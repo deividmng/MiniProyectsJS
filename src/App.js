@@ -2,17 +2,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './componets/Layout';
 import Layout2 from './componets/Layout2';
-
 import Home from './componets/Home';
-
-
 import Condicionals from './componets/Condicionals';
-import Condicionals2 from './componets/Condicionals2';
 
-import Contact from './componets/Contact';
-import Contact2 from './componets/Contact2';
 
-import Proyect from './componets/Proyect';
 import N1 from './P1/Level1';
 import N2 from './P1/Level2';
 import N3 from './P1/Level3';
@@ -30,26 +23,17 @@ import N13 from './P2/Level13';
 import N14 from './P2/Level14';
 import N15 from './P2/Level15';
 
-
-
-
-
-
-
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="condicionals" element={<Condicionals />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="proyect" element={<Proyect />} />
+     
       </Route>
 
       <Route path="/" element={<Layout2 />}>
         <Route path="condicionals" element={<Condicionals />} />
-        <Route path="contact2" element={<Contact2 />} />
-        <Route path="proyect" element={<Proyect />} />
       </Route>
 
         <Route path="level1" element={<N1 />} />

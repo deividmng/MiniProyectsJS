@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaArrowCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { MdHome } from "react-icons/md";
 import { Link } from "react-router-dom";
-import So11 from '../../assets/images/imgSolutions/level11.png';
-import So11j from '../../assets/images/imgSolutions/level11.j.png';
-import Eye from '../../assets/images/ojo.png';
-import'./index.scss';
+import So12h from "../../assets/images/imgSolutions/level12.png";
+import So12j from "../../assets/images/imgSolutions/level12j.png";
+import Eye from "../../assets/images/ojo.png";
+import "./index.scss";
 
 const Level = () => {
   const [age, setAge] = useState("");
@@ -16,33 +16,19 @@ const Level = () => {
     setAge(event.target.value);
   };
 
-  const calculateFeedback = () => {
-    const ageInt = parseInt(age, 10);
-
-    if (ageInt >= 18) {
-      setFeedback("You are old enough to drive.");
-    } else {
-      const yearsLeft = 18 - ageInt;
-      setFeedback(`You are left with ${yearsLeft} years to drive.`);
-    }
-
-    // Llama a la función para comparar edades
-    compareAges(ageInt);
-  };
-
   const compareAges = (userAge) => {
-    const myAge = 25;  // Supongamos que mi edad es 25
+    const myAge = 30; // suposin that I'm 30
 
     if (!isNaN(userAge)) {
       if (myAge === userAge) {
-        console.log("We are the same age!");
+        setFeedback("We are the same age!");
       } else if (myAge > userAge) {
-        console.log(`You are ${myAge - userAge} years younger than me.`);
+        setFeedback(`You are ${myAge - userAge} years younger than me.`);
       } else {
-        console.log(`You are ${userAge - myAge} years older than me.`);
+        setFeedback(`You are ${userAge - myAge} years older than me.`);
       }
     } else {
-      console.log("Invalid input. Please enter a valid number for age.");
+      setFeedback("Invalid input. Please enter a valid number for age.");
     }
   };
 
@@ -69,7 +55,7 @@ const Level = () => {
   return (
     <div className="level-container">
       <div className="links">
-        <Link to="../Level1">
+        <Link to="../Level11">
           <FaArrowCircleLeft />
         </Link>
         <Link to="/">
@@ -78,7 +64,7 @@ const Level = () => {
         <div ref={imageRef} onClick={toggleImages}>
           <img className="eye" src={Eye} alt="developer" />
         </div>
-        <Link to="../Level2">
+        <Link to="../Level13">
           <FaArrowAltCircleRight />
         </Link>
       </div>
@@ -92,30 +78,31 @@ const Level = () => {
           onChange={handleAgeChange}
         />
       </div>
-      <button className="resultT" onClick={calculateFeedback}>
+      <button
+        className="resultT"
+        onClick={() => compareAges(parseInt(age, 10))}
+      >
         Get Feedback
       </button>
       <p className="text-center">{feedback}</p>
       <div className="explanation">
         <p className="text-center">Exercise</p>
         <p className="text-center">
-          Get user input using prompt(“Enter your age:”). If the user is 18 or older,
-          give feedback: 'You are old enough to drive,' but if not 18 give
-          another feedback stating to wait for the number of years he needs to
-          turn 18.
+          Compare the values ​​of myAge and yourAge using if... else. Based on
+          the comparison, record the result in the console indicating who is
+          older (you or me). Use prompt(“Enter your age:”) to get the age as
+          input.
         </p>
         <p className="text-center">Explanation</p>
         <p className="text-center">
-          This code creates a React component that asks the user for
-          their age, calculates if they are old enough to drive, and displays a
-          message accordingly.
+          This code  it checks your age against a fixed number (let's say 25) and tells you if you are younger, older, or the same age
         </p>
       </div>
       <div className="displayImg">
         {showImages && (
           <>
-            <img className="max" src={So11} alt="developer" />
-            <img className="max" src={So11j} alt="developer" />
+            <img className="max" src={So12h} alt="developer" />
+            <img className="max" src={So12j} alt="developer" />
           </>
         )}
       </div>

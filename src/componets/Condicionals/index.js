@@ -106,7 +106,7 @@ const Home = () => {
             <div style={{ fontSize: "12.5em" }}>
             <div className="number10">
                 <RiNumber1 />
-                <RiNumber8 />
+                <RiNumber7 />
               </div>
             </div>
           </Link>
