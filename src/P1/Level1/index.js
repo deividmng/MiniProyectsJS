@@ -16,7 +16,7 @@ const Level = () => {
   const [showImages, setShowImages] = useState(false);
 
   // Declare variables and assign values
-  let firstName = 'Davidd';
+  let firstName = 'David';
   let lastName = 'Exposito';
   let country = 'Spain';
   let city = 'Jaen';
@@ -70,7 +70,11 @@ const Level = () => {
           <FaArrowAltCircleRight />
         </Link>
       </div>
+      
       <h2>User Information</h2>
+
+<div className='text-center'>
+
       <ul>
         <li>
           <span>First Name: {firstName}</span>
@@ -94,6 +98,9 @@ const Level = () => {
           <span>Year: {year}</span>
         </li>
       </ul>
+</div>
+      
+
       <p className="text-center">Ejercicio</p>
       <p className="text-center">
         Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the
@@ -103,6 +110,7 @@ const Level = () => {
       <p className="text-center">
         This component displays user information with different data types.
       </p>
+        
 
       <div className='Slider'>
         {showImages && (
