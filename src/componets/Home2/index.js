@@ -11,7 +11,7 @@ const Home = () => {
         <h2>llamando de la parte dos</h2>
       </div>
 
-      <div className="container">
+      <div className="container-card">
         <div className="card">
 
           

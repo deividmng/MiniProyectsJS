@@ -32,7 +32,7 @@ const Sidebar = () => {
           <p className='Level'>Booleans, Operators, Date</p>
         </NavLink>
         <NavLink exact activeClassName="active" className="about-link" to="/condicionals">
-          <p>Conditionals</p>
+          <p>Arrays</p>
         </NavLink>
         <NavLink exact activeClassName="active" className="contact-link" to="/">
           <p>Level 1</p>

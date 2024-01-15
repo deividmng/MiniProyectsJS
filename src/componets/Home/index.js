@@ -14,7 +14,6 @@ import {
   RiNumber0,
 } from "react-icons/ri";
 
-
 const Home = () => {
   return (
     <>
@@ -22,7 +21,7 @@ const Home = () => {
         <h2>Booleans, Operators, Date</h2>
       </div>
 
-      <div className="container">
+      <div className="container-card">
         <div className="card">
           <Link to="../Level1">
             <p>Exercise: </p>
@@ -62,7 +61,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container-card">
         <div className="card">
           <Link to="../Level5">
             <p>Exercise: </p>
@@ -101,7 +100,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="container">
+       <div className="container-card">
         <div className="card">
           <Link to="../Level9">
             <p>Exercise: </p>
@@ -109,13 +108,13 @@ const Home = () => {
               <RiNumber9 />
             </div>
           </Link>
-          <div></div>
+          
         </div>
 
         <div className="card">
           <Link to="../Level10">
             <p>Exercise: </p>
-            <div style={{ fontSize: "12.5em" }}>
+            <div style={{ fontSize: "11em" }}>
               <div className="number10">
                 <RiNumber1 />
                 <RiNumber0 />
@@ -123,7 +122,7 @@ const Home = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </div> */
     </>
   );
 };
