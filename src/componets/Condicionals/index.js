@@ -18,10 +18,10 @@ const Home = () => {
   return (
     <>
       <div className="text">
-        <h2>Conditionals</h2>
+        <h2>Arrays</h2>
       </div>
 
-      <div className="container">
+      <div className="container-card">
         <div className="card">
           <Link to="../Level11">
             <p>Exercise: </p>
@@ -74,7 +74,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container-card">
         <div className="card">
           <Link to="../Level5">
             <p>Exercise: </p>
@@ -119,13 +119,13 @@ const Home = () => {
             <div style={{ fontSize: "12.5em" }}>
             <div className="number10">
                 <RiNumber1 />
-                <RiNumber9 />
+                <RiNumber8 />
               </div>
             </div>
           </Link>
         </div>
       </div>
-      <div className="container">
+      <div className="container-card">
         <div className="card">
           <Link to="../Level9">
             <p>Exercise: </p>
@@ -139,7 +139,7 @@ const Home = () => {
         <div className="card">
           <Link to="../Level10">
             <p>Exercise: </p>
-            <div style={{ fontSize: "12.5em" }}>
+            <div style={{ fontSize: "11em" }}>
               <div className="number10">
                 <RiNumber1 />
                 <RiNumber0 />
