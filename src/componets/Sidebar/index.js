@@ -41,7 +41,7 @@ const Sidebar = () => {
           {open ? (
             <ul className="menu">
               <li className="menu-item">
-                <Link to="/Level15">
+                <Link to="../comingSoon">
                   <button onClick={handleMenuOne}>level2</button>
                 </Link>
               </li>
