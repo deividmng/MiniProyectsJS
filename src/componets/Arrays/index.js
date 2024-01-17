@@ -15,13 +15,13 @@ import {
   RiNumber1,
   RiNumber2,
   RiNumber3,
-  RiNumber4,
-  RiNumber5,
-  RiNumber6,
-  RiNumber7,
-  RiNumber8,
-  RiNumber9,
-  RiNumber0,
+  // RiNumber4,
+  // RiNumber5,
+  // RiNumber6,
+  // RiNumber7,
+  // RiNumber8,
+  // RiNumber9,
+  // RiNumber0,
 } from "react-icons/ri";
 
 
