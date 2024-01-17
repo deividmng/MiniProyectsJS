@@ -45,7 +45,7 @@ const Level = () => {
         <div ref={imageRef} onClick={toggleImages}>
           <img className="eye" src={Eye} alt="developer" />
         </div>
-        <Link to="../Level12">
+        <Link to="/Condicionals">
           <FaArrowAltCircleRight />
         </Link>
       </div>
