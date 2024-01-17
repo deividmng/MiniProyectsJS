@@ -1,56 +1,56 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { FaArrowCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { MdHome } from "react-icons/md";
 import { Link } from "react-router-dom";
-import So12h from "../../assets/images/imgSolutions/level12.png";
-import So12j from "../../assets/images/imgSolutions/level12j.png";
-import Eye from "../../assets/images/ojo.png";
+import Slider from "react-slick";
+import "../../scss/app.scss";
 import "./index.scss";
+import Slch from "../../assets/images/imgSolutions2/level12h.png";
+import Slcj from "../../assets/images/imgSolutions2/level12j.png";
+// import Slcc from "../../assets/images/imgSolutions2/level12c.png";
+import Slcj2 from "../../assets/images/imgSolutions2/level12jcoun.png";
+import Eye from "../../assets/images/ojo.png";
+import { useCountries } from "./countries.js";
 
 const Level = () => {
-  const [age, setAge] = useState("");
-  const [feedback, setFeedback] = useState("");
+  const imageRef = useRef();
+
   const [showImages, setShowImages] = useState(false);
+  const [showSlider, setShowSlider] = useState(false);
 
-  const handleAgeChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const compareAges = (userAge) => {
-    const myAge = 30; // suposin that I'm 30
-
-    if (!isNaN(userAge)) {
-      if (myAge === userAge) {
-        setFeedback("We are the same age!");
-      } else if (myAge > userAge) {
-        setFeedback(`You are ${myAge - userAge} years younger than me.`);
-      } else {
-        setFeedback(`You are ${userAge - myAge} years older than me.`);
-      }
-    } else {
-      setFeedback("Invalid input. Please enter a valid number for age.");
-    }
-  };
+  const { countries, setCountries } = useCountries();
+  const [addOption, setAddOption] = useState(null);
 
   const toggleImages = () => {
     setShowImages(!showImages);
+    setShowSlider(!showSlider);
   };
 
-  const imageRef = useRef(null);
+  const hasOption = (option) => countries.includes(option);
 
-  const handleClickOutside = (event) => {
-    if (imageRef.current && !imageRef.current.contains(event.target)) {
-      setShowImages(false);
+  const handleAddOption = (option) => {
+    if (!hasOption(option)) {
+      setCountries([...countries, option]);
     }
+    setAddOption(null);
   };
 
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+  const renderDropdownCountry = () => {
+    const options = ["Ethiopia", "Spain"]; // add more countrys to the array
 
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+    return (
+      <div className="dropdownCountry">
+        <button className="dropbtn">Add Country</button>
+        <div className="dropdown-content">
+          {options.map((option) => (
+            <button key={option} onClick={() => handleAddOption(option)}>
+              Add {option}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="level-container">
@@ -58,7 +58,7 @@ const Level = () => {
         <Link to="../Level11">
           <FaArrowCircleLeft />
         </Link>
-        <Link to="/">
+        <Link to="/Condicionals">
           <MdHome />
         </Link>
         <div ref={imageRef} onClick={toggleImages}>
@@ -68,41 +68,67 @@ const Level = () => {
           <FaArrowAltCircleRight />
         </Link>
       </div>
-      <h2>You are old enough to drive </h2>
-      <div className="input-container">
-        <label>Enter your age:</label>
-        <input
-          className="inputT"
-          type="text"
-          value={age}
-          onChange={handleAgeChange}
-        />
+
+      <div className="">
+        <h2>List of Countries</h2>
+
+        <div>
+          <ul className="ul-shop">
+            {countries.map((country, index) => (
+              <li key={index}>{country}</li>
+            ))}
+          </ul>
+          {addOption ? (
+            renderDropdownCountry()
+          ) : (
+            <button className="dropbtn" onClick={() => setAddOption("Options")}>
+              Add Country
+            </button>
+          )}
+        </div>
       </div>
-      <button
-        className="resultT"
-        onClick={() => compareAges(parseInt(age, 10))}
-      >
-        Get Feedback
-      </button>
-      <p className="text-center">{feedback}</p>
+
       <div className="explanation">
         <p className="text-center">Exercise</p>
         <p className="text-center">
-          Compare the values ​​of myAge and yourAge using if... else. Based on
-          the comparison, record the result in the console indicating who is
-          older (you or me). Use prompt(“Enter your age:”) to get the age as
-          input.
+          Synchronize an array with countries in another js file and check if
+          'Ethiopia' and 'Spain' exists in the array if it exists, print
+          'ETHIOPIA' and 'Spain'. If it does not exist add to the list of
+          countries.
         </p>
         <p className="text-center">Explanation</p>
         <p className="text-center">
-          This code  it checks your age against a fixed number (let's say 25) and tells you if you are younger, older, or the same age
+          This exercise represents the deployment of an array from another file,
+          <br></br>
+          and with the "Add Country" button, we add two more countries.
         </p>
       </div>
-      <div className="displayImg">
+      <div className={showSlider ? "Slider2 visible" : "Slider2"}>
         {showImages && (
           <>
-            <img className="max" src={So12h} alt="developer" />
-            <img className="max" src={So12j} alt="developer" />
+            <div className="align-right">
+              <button className="close-button" onClick={toggleImages}>
+                X
+              </button>
+            </div>
+            <Slider>
+              <div className="">
+                <img className="slider-image" src={Slch} alt="SolutionsHtml" />
+                <p>HTML</p>
+              </div>
+              <div className="slider-img">
+                <img className="slider-image" src={Slcj} alt="SolutionJS" />
+                <p>JS</p>
+              </div>
+              {/* <div className="slider-img">
+                <img className="slider-image" src={Slcc} alt="SolutionJc" />
+                <p>Css</p>
+              </div> */}
+              <div className="slider-img">
+                <img className="slider-image" src={Slcj2} alt="SolutionJS" />
+                <p>  script  src="countries.js" </p>
+              </div>
+            </Slider>
           </>
         )}
       </div>

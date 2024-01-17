@@ -1,61 +1,84 @@
-import React, { useState } from 'react';
-import { FaArrowCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
-import { MdHome } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from "react";
+import { FaArrowCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { MdHome } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "../../scss/app.scss";
+import Slch from "../../assets/images/imgSolutions2/level11h.png";
+import Slcj from "../../assets/images/imgSolutions2/level11j.png";
+import Eye from "../../assets/images/ojo.png";
 
 const Level = () => {
-  const [age, setAge] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const imageRef = useRef();
+  const [showImages, setShowImages] = useState(false);
+  const [showSlider, setShowSlider] = useState(false);
+ 
 
-  const handleAgeChange = (event) => {
-    setAge(event.target.value);
+
+  const toggleImages = () => {
+    setShowImages(!showImages);
+    setShowSlider(!showSlider);
   };
 
-  const calculateFeedback = () => {
-    const ageInt = parseInt(age, 10);
+ 
+ 
 
-    if (ageInt >= 18) {
-      setFeedback('You are old enough to drive.');
-    } else {
-      const yearsLeft = 18 - ageInt;
-      setFeedback(`You are left with ${yearsLeft} years to drive.`);
-    }
-  };
+
 
   return (
     <div className="level-container">
       <div className="links">
-        <Link to="../Level1">
+        <Link to="../Level10">
           <FaArrowCircleLeft />
         </Link>
-        <Link to="/">
+        <Link to="/Condicionals">
           <MdHome />
         </Link>
-        <Link to="../Level2">
+        <div ref={imageRef} onClick={toggleImages}>
+          <img className="eye" src={Eye} alt="developer" />
+        </div>
+        <Link to="../Level12">
           <FaArrowAltCircleRight />
         </Link>
       </div>
-      <h2>Calculate the value </h2>
-      <div className="input-container">
-        <label>Enter your age:</label>
-        <input
-          className='inputT'
-          type="text"
-          value={age}
-          onChange={handleAgeChange}
-        />
+
+      <div className="container">
+        <h2>Current Shopping Cart:</h2>
+     
+
+      
       </div>
-      <button className='resultT' onClick={calculateFeedback}>Get Feedback</button>
-      <p className="text-center">{feedback}</p>
+
       <div className="explanation">
         <p className="text-center">Exercise</p>
         <p className="text-center">
-          {/* Explanation content */}
+      
         </p>
         <p className="text-center">Explanation</p>
         <p className="text-center">
-          {/* Explanation content */}
+      
         </p>
+      </div>
+      <div className={showSlider ? "Slider2 visible" : "Slider2"}>
+        {showImages && (
+          <>
+            <div className="align-right">
+              <button className="close-button" onClick={toggleImages}>
+                X
+              </button>
+            </div>
+            <Slider>
+              <div>
+                <img className="" src={Slch} alt="SolutionsHtml" />
+                <p>HTML</p>
+              </div>
+              <div>
+                <img className="" src={Slcj} alt="SolutionJS" />
+                <p>JS</p>
+              </div>
+            </Slider>
+          </>
+        )}
       </div>
     </div>
   );

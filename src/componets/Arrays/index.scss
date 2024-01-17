@@ -1,0 +1,20 @@
+.idea {
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease; 
+  
+    &:hover {
+      color: black; 
+      transform: translateY(2px) translateX(2px) scale(1.1); 
+    }
+  }
+  
+  
+
+.text-array {
+    text-align: center;
+    h2 {
+      font-size: 33px;
+      margin: auto;
+      color: white;
+    }
+}

@@ -17,12 +17,14 @@
     }
   
     ul {
+      
       list-style: none;
       padding: 0;
       margin: 0;
   
       li {
         margin-bottom: 10px;
+        color: white;
   
         &:last-child {
           margin-bottom: 0;
@@ -88,7 +90,7 @@
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+     
   
       li {
         margin-bottom: 10px;
@@ -150,11 +152,23 @@
       height: 100%;
       object-fit: cover;
     }
+    p {
+      font-size: 18px; /* Ajusta el tamaño del texto según tus preferencias */
+      color: #ffcb05;
+      text-align: center;
+      background-color:#1f1e1c;
+      padding: 3px; /* Ajusta el relleno según tus preferencias */
+      border-bottom: 2px solid PowderBlue; /* Borde solo en la parte inferior */
+      border-radius: 0 0 20px 20px; /* Bordes redondeados solo en la parte inferior */
+      margin: 0;
+      margin-left: 222px;
+      margin-right: 222px;
+    }
   }
   
 
 
-  .resultShow{
-    color: white;
-    font-size:25px;
-  }
+  // .resultShow{
+  //   color: rgb(214, 18, 18);
+  //   font-size:35px;
+  // }

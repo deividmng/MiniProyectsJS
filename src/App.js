@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './componets/Layout';
 import Layout2 from './componets/Layout2';
 import Home from './componets/Home';
-import Condicionals from './componets/Condicionals';
+import Arrays from './componets/Arrays';
 
 
 import N1 from './P1/Level1';
@@ -28,12 +28,12 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="condicionals" element={<Condicionals />} />
+        <Route path="Arrays" element={<Arrays />} />
      
       </Route>
 
       <Route path="/" element={<Layout2 />}>
-        <Route path="condicionals" element={<Condicionals />} />
+        <Route path="condicionals" element={<Arrays />} />
       </Route>
 
         <Route path="level1" element={<N1 />} />

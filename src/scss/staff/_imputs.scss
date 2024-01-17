@@ -1,0 +1,53 @@
+.input-shop {
+ 
+  text-align: center;
+}
+
+
+.food {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    margin: 5px;  
+  }
+}
+
+.center {
+  display: block;
+  margin: 20px auto; 
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+
+.ul-shop {
+  display: flex;
+ 
+  justify-content: center;
+  list-style: none;  
+
+  li {
+    margin: 0 10px;  
+    display: inline-block;
+  }
+
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+.list-shop {
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+
+.img-coming {
+  max-width: 80vh;
+  
+}

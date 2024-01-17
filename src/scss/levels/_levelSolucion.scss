@@ -2,14 +2,21 @@
   .align-right{
     display: flex;
     justify-content: flex-end;
-
-  .close-button {
-    font-size: 13px;
-    border-radius: 20px;
-    margin: 0;
-    cursor: pointer; 
-    border: none;
-    padding: 0;
-  }
+    .close-button {
+      font-size: 16px;
+      border-radius: 20px;
+      margin: 0;
+      cursor: pointer; 
+      border: 1px solid #928e8e;
+      padding: 5px;
+      background-color: #a1a1a1;
+      color: #555;
+    
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+    
   
   }
+

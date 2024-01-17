@@ -56,17 +56,50 @@ $primary-color: #f0dc4e;
         transition: color 0.3s ease;
 
         &:hover {
-          color:  $primary-color ;
-          
+          color: $primary-color;
         }
       }
     }
   }
 }
 
+// this one is the hambuerger menu
 .dropdown {
-  z-index: 33;
-  position: absolute;
-  left: 90%;
-  top: 10px;
+
+  margin: 0;
+
+  button {
+    margin-top: 12px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #f0dc4e;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+   
+  }
+
+ 
+  .menu-item {
+    button {
+      border: none;
+      background-color: darken($color: $primary-color, $amount: 10);
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Add transition effect */
+  
+      &:hover {
+        background-color: lighten($color: $primary-color, $amount: 10);
+      }
+    }
+  }
+  
 }

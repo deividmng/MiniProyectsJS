@@ -1,51 +1,62 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { FaArrowCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { MdHome } from "react-icons/md";
 import { Link } from "react-router-dom";
-import So11 from '../../assets/images/imgSolutions/level11.png'
-import So11j from '../../assets/images/imgSolutions/level11.j.png'
-import Eye from '../../assets/images/ojo.png';
-import'./index.scss';
+import Slider from "react-slick";
+import "../../scss/app.scss";
+import Slch from "../../assets/images/imgSolutions2/level11h.png";
+import Slcj from "../../assets/images/imgSolutions2/level11j.png";
+import Eye from "../../assets/images/ojo.png";
 
 const Level = () => {
-  const [age, setAge] = useState("");
-  const [feedback, setFeedback] = useState("");
+  const imageRef = useRef();
   const [showImages, setShowImages] = useState(false);
-
-  const handleAgeChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const calculateFeedback = () => {
-    const ageInt = parseInt(age, 10);
-
-    if (ageInt >= 18) {
-      setFeedback("You are old enough to drive.");
-    } else {
-      const yearsLeft = 18 - ageInt;
-      setFeedback(`You are left with ${yearsLeft} years to drive.`);
-    }
-  };
+  const [showSlider, setShowSlider] = useState(false);
+  const [shoppingCart, setShoppingCart] = useState([
+    "Milk",
+    "Coffee",
+    "Tea",
+    "Honey",
+  ]);
+  const [newItem, setNewItem] = useState("");
 
   const toggleImages = () => {
     setShowImages(!showImages);
+    setShowSlider(!showSlider);
   };
 
-  const imageRef = useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (imageRef.current && !imageRef.current.contains(event.target)) {
-      setShowImages(false);
+  const modifyShoppingCart = (item) => {
+    if (!shoppingCart.includes(item)) {
+      setShoppingCart([item, ...shoppingCart]);
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+  const modifyShoppingCartCereal = () => {
+    if (!shoppingCart.includes("Cereal")) {
+      setShoppingCart([...shoppingCart, "Cereal"]);
+    }
+  };
 
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const removeItems = (itemsToRemove) => {
+    const updatedCart = shoppingCart.filter(
+      (item) => !itemsToRemove.includes(item)
+    );
+    setShoppingCart(updatedCart);
+  };
+  const addItem = () => {
+    if (newItem.trim() !== "") {
+      setShoppingCart([...shoppingCart, newItem]);
+      setNewItem("");
+    }
+  };
+  const itemsToRemove = [
+    "Sugar",
+    "Coca-Cola",
+    "Chocolate",
+    "Candy",
+    "Cookies",
+    "Soda",
+  ];
 
   return (
     <div className="level-container">
@@ -53,7 +64,7 @@ const Level = () => {
         <Link to="../Level10">
           <FaArrowCircleLeft />
         </Link>
-        <Link to="/">
+        <Link to="/Condicionals">
           <MdHome />
         </Link>
         <div ref={imageRef} onClick={toggleImages}>
@@ -63,43 +74,79 @@ const Level = () => {
           <FaArrowAltCircleRight />
         </Link>
       </div>
-      <h2>You are old enough to drive </h2>
-      <div className="input-container">
-        <label>Enter your age:</label>
-        <input
-          className="inputT"
-          type="text"
-          value={age}
-          onChange={handleAgeChange}
-        />
+
+      <div className="container">
+        <h2>Current Shopping Cart:</h2>
+        <div>
+          <p className="list-shop">Add: Sugar, Coca-Cola, Candy </p>
+          <input
+            className="center"
+            type="text"
+            value={newItem}
+            onChange={(e) => setNewItem(e.target.value)}
+            placeholder="Enter a new item"
+          />
+          <button className="resultT" onClick={addItem}>
+            Add to Cart
+          </button>
+        </div>
+        <div className="food">
+          <button onClick={() => modifyShoppingCart("Meat")}>Meat</button>
+          <button onClick={modifyShoppingCartCereal}>Cereal</button>
+          <button onClick={() => removeItems(itemsToRemove)}>
+            Take away the things I can't take
+          </button>
+        </div>
+
+        <div className="ul-shop">
+          <ul>
+            {shoppingCart.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <button className="resultT" onClick={calculateFeedback}>
-        Get Feedback
-      </button>
-      <p className="text-center">{feedback}</p>
+
       <div className="explanation">
         <p className="text-center">Exercise</p>
         <p className="text-center">
-          Get user input using prompt(“Enter your age:”). If the user is 18 or older,
-          give feedback: 'You are old enough to drive,' but if not 18 give
-          another feedback stating to wait for the number of years he needs to
-          turn 18.
+          Add 'Meat' to the beginning of the shopping cart if it hasn't been
+          added yet.<br></br>
+          Add 'Cereal' to the end of the shopping cart if it hasn't been added
+          yet.<br></br>
+          Add 'Sugar' to the shopping cart if it hasn't been added yet.<br></br>
+          Allow the user to input a new item and add it to the shopping cart.
+          <br></br>
+          Create a button to remove the items 'Sugar', 'Coca-Cola', 'Chocolate',
+          'Candy', 'Cookies', and 'Soda' from the shopping cart.
         </p>
         <p className="text-center">Explanation</p>
         <p className="text-center">
-          This code creates a React component that asks the user for
-          their age, calculates if they are old enough to drive, and displays a
-          message accordingly.
+          This exercise represents a simple shopping cart application. It
+          initializes the shopping cart state with common items. The component
+          provides buttons to add 'Meat', 'Cereal', and 'Sugar' to the shopping
+          cart based on certain conditions. Users can also input a new item, and
+          it will be added to the shopping cart.
         </p>
       </div>
-      <div className="displayImg">
+      <div className={showSlider ? "Slider2 visible" : "Slider2"}>
         {showImages && (
           <>
-              <p>html</p>
-            <img className="max" src={So11} alt="developer" />
-              <p>JavaScript</p>
-            <img className="max" src={So11j} alt="developer" />
-        
+            <div className="align-right">
+              <button className="close-button" onClick={toggleImages}>
+                X
+              </button>
+            </div>
+            <Slider>
+              <div>
+                <img className="" src={Slch} alt="SolutionsHtml" />
+                <p>HTML</p>
+              </div>
+              <div>
+                <img className="" src={Slcj} alt="SolutionJS" />
+                <p>JS</p>
+              </div>
+            </Slider>
           </>
         )}
       </div>
