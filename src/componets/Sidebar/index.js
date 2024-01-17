@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import { GiHamburgerMenu , GiPlainCircle} from "react-icons/gi";
+import { GiHamburgerMenu , } from "react-icons/gi";
 import React, { useState } from 'react';
 import './index.scss';
 import JS from '../../assets/images/JavaScript-logo.png';
@@ -16,10 +16,7 @@ const Sidebar = () => {
     setOpen(false);
   };
 
-  const handleMenuTwo = () => {
   
-    setOpen(false);
-  };
 
   return (
     <div className={`nav-bar ${open ? 'open' : ''}`}>
@@ -46,7 +43,7 @@ const Sidebar = () => {
           {open ? (
             <ul className="menu">
               <li className="menu-item">
-              <Link to="/Level15">
+              <Link to="/Level1">
               <button onClick={handleMenuOne}>level2</button>
                </Link>
           

@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Eye from '../../assets/images/ojo.png';
 
 const Level = () => {
-  const [stringValue, setStringValue] = useState('0');
+  
   const [numberValue, setNumberValue] = useState(10);
   const [inputValue, setInputValue] = useState('');
   const [comparisonResult, setComparisonResult] = useState('');
@@ -37,7 +37,7 @@ const Level = () => {
     if (!isNaN(inputValue)) {
       const newNumberValue = parseInt(inputValue, 10);
       setNumberValue(newNumberValue);
-      setStringValue(inputValue);
+     
 
       // Compare the new number with 10 and update the result
       if (newNumberValue > 10) {
