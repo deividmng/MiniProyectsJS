@@ -60,9 +60,16 @@
     padding-bottom: 33px;
   }
   
+
+  
   .eye {
     height: 44px;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Agrega una transición para suavizar el cambio */
+  }
+  
+  .eye:hover {
+    transform: scale(1.2); /* Hace que la imagen sea un 20% más grande en hover */
   }
   
 
@@ -153,22 +160,16 @@
       object-fit: cover;
     }
     p {
-      font-size: 18px; /* Ajusta el tamaño del texto según tus preferencias */
+      font-size: 18px; // this is the html js under the img ex explain
       color: #ffcb05;
       text-align: center;
       background-color:#1f1e1c;
-      padding: 3px; /* Ajusta el relleno según tus preferencias */
-      border-bottom: 2px solid PowderBlue; /* Borde solo en la parte inferior */
-      border-radius: 0 0 20px 20px; /* Bordes redondeados solo en la parte inferior */
+      padding: 3px; 
+      border-bottom: 2px solid PowderBlue; 
+      border-radius: 0 0 20px 20px; 
       margin: 0;
       margin-left: 222px;
       margin-right: 222px;
     }
   }
   
-
-
-  // .resultShow{
-  //   color: rgb(214, 18, 18);
-  //   font-size:35px;
-  // }

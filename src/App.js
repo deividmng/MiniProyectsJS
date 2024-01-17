@@ -21,7 +21,9 @@ import N11 from './P2/Level11';
 import N12 from './P2/Level12';
 import N13 from './P2/Level13';
 import N14 from './P2/Level14';
-import N15 from './P2/Level15';
+// import N15 from './P2/Level15';
+
+import LinkSoon from './componets/comingSoon'
 
 function App() {
   return (
@@ -51,7 +53,10 @@ function App() {
         <Route path="level12" element={<N12 />} />
         <Route path="level13" element={<N13 />} />
         <Route path="level14" element={<N14 />} />
-        <Route path="level15" element={<N15 />} />
+
+        
+        {/* This one is the one to go to coming soon */}
+        <Route path="comingSoon" element={<LinkSoon />} />
        
     </Routes>
   );

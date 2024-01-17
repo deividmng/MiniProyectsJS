@@ -38,20 +38,7 @@ const Level = () => {
   };
 
   const imageRef = useRef(null);
-
-  // const handleClickOutside = (event) => {
-  //   if (imageRef.current && !imageRef.current.contains(event.target)) {
-  //     setShowImages(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   // document.addEventListener('click', handleClickOutside);
-
-  //   return () => {
-  //     document.removeEventListener('click', handleClickOutside);
-  //   };
-  // }, []);
+  
 
   return (
     <div className="level-container">

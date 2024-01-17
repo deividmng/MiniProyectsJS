@@ -72,7 +72,7 @@ const Home = () => {
 
         <div className="card">
           <p>Exercise: </p>
-          <Link to="">
+          <Link to="../Level13">
             <div style={{ fontSize: "12.5em" }}>
               <div className="number10">
                 <RiNumber1 />

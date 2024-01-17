@@ -14,7 +14,7 @@ const Level = () => {
         <Link to="/">
           <MdHome />
         </Link>
-        <img  className='img-coming' to="/" src={Img} alt="COMMIN SOON" />
+        <img  className='img-coming' to="../comingSoon" src={Img} alt="COMMIN SOON" />
       </div>
     
     </div>
