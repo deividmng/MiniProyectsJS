@@ -40,7 +40,7 @@ const Level = () => {
 
     return (
       <div className="dropdownCountry">
-        <button className="dropbtn">Add Country</button>
+        <button className="btn-green">Add Country</button>
         <div className="dropdown-content">
           {options.map((option) => (
             <button key={option} onClick={() => handleAddOption(option)}>
@@ -81,7 +81,7 @@ const Level = () => {
           {addOption ? (
             renderDropdownCountry()
           ) : (
-            <button className="dropbtn" onClick={() => setAddOption("Options")}>
+            <button className="btn-green" onClick={() => setAddOption("Options")}>
               Add Country
             </button>
           )}

@@ -1,0 +1,23 @@
+.input-loop {
+  width: 63px;
+}
+.all-number {
+  font-size: 33px;
+  display: flex;
+  max-width: 100vh;
+  gap: 15px;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.container-loops {
+  text-align: center;
+  align-items: center;
+  input {
+ font-size: 20px;
+  }
+}
+
+.li-counties {
+  font-size: 15px;
+}

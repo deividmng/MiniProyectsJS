@@ -28,6 +28,10 @@ const Sidebar = () => {
         <NavLink exact activeClassName="active" className="about-link" to="/condicionals">
           <p>Arrays</p>
         </NavLink>
+
+        <NavLink exact activeClassName="active" to="/loops">
+          <p>Loops</p>
+        </NavLink>
         {/* Uncomment the lines below if needed */}
         {/* <NavLink exact activeClassName="active" className="contact-link" to="/">
           <p>Level 1</p>
@@ -45,7 +49,7 @@ const Sidebar = () => {
                   <button onClick={handleMenuOne}>level2</button>
                 </Link>
               </li>
-              {/* Uncomment the lines below if needed */}
+              {/* Add when level 2 it needed */}
               {/* <li className="menu-item">
                 <button onClick={handleMenuTwo}>Menu 2</button>
               </li> */}

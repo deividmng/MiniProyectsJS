@@ -1,0 +1,20 @@
+.container-b {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  input {
+    border-radius: 30px;
+    
+  }
+
+  button{
+    margin-top: 10px;
+  }
+
+   p {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+   }
+}

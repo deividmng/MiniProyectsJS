@@ -1,23 +1,21 @@
 import React, { useState, useRef } from "react";
-import "./index.scss";
+// import "./index.scss";
 import { Link } from "react-router-dom";
 import Eye from "../../assets/images/icons/icons8-idea.svg";
-import "../../scss/app.scss";
-import Hp1 from "../../assets/helpimg/help1.png";
-import Hp2 from "../../assets/helpimg/help2.png";
-import Hp3 from "../../assets/helpimg/help3.png";
-import Hp4 from "../../assets/helpimg/help4.png";
+// import "../../scss/app.scss";
+import Hp1 from "../../assets/helpimg/helpLoops1.png";
+import Hp2 from "../../assets/helpimg/helpLoops2.png";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
   RiNumber1,
-  RiNumber2,
-  RiNumber3,
-  // RiNumber4,
-  // RiNumber5,
-  // RiNumber6,
+  // RiNumber2,
+  // RiNumber3,
+  RiNumber4,
+   RiNumber5,
+   RiNumber6,
   // RiNumber7,
   // RiNumber8,
   // RiNumber9,
@@ -38,7 +36,7 @@ const Home = () => {
   return (
     <>
       <div className="text-array">
-        <h2>Arrays </h2>
+        <h2>Loops </h2>
         <div ref={imageRef} onClick={toggleImages}>
           <img className="idea" src={Eye} alt="developer"></img>
         </div>
@@ -46,12 +44,12 @@ const Home = () => {
 
       <div className="container-card">
         <div className="card">
-          <Link to="../Level11">
+          <Link to="../Level14">
             <p>Exercise: </p>
             <div style={{ fontSize: "12.5em" }}>
               <div className="number10">
                 <RiNumber1 />
-                <RiNumber1 />
+                <RiNumber4 />
               </div>
             </div>
           </Link>
@@ -59,12 +57,12 @@ const Home = () => {
         </div>
 
         <div className="card">
-          <Link to="../Level12">
+          <Link to="../Level15">
             <p>Exercise: </p>
             <div style={{ fontSize: "12.5em" }}>
               <div className="number10">
                 <RiNumber1 />
-                <RiNumber2 />
+                <RiNumber5 />
               </div>
             </div>
           </Link>
@@ -72,11 +70,11 @@ const Home = () => {
 
         <div className="card">
           <p>Exercise: </p>
-          <Link to="../Level14">
+          <Link to="../Level16">
             <div style={{ fontSize: "12.5em" }}>
               <div className="number10">
                 <RiNumber1 />
-                <RiNumber3 />
+                <RiNumber6 />
               </div>
             </div>
           </Link>
@@ -184,12 +182,7 @@ const Home = () => {
                 <div>
                   <img className="" src={Hp2} alt="clue" />
                 </div>
-                <div>
-                  <img className="" src={Hp3} alt="clue" />
-                </div>
-                <div>
-                  <img className="" src={Hp4} alt="clue" />
-                </div>
+               
               </Slider>
             </>
           )}

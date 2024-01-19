@@ -70,14 +70,16 @@ const Level = () => {
           </ul>
         </div>
         <button
-          className="resultT"
+  
+        className="btn-green"
           onClick={() => {
             toggleFullStack();
             combineStacks();
+            
           }}
         >
           {showFullStack ? "Hide Full Stack" : "Show Full Stack"}
-        </button>
+        </button >
         {showFullStack && (
           <div>
             <h3>Full Stack:</h3>

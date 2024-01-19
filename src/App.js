@@ -4,8 +4,9 @@ import Layout from './componets/Layout';
 import Layout2 from './componets/Layout2';
 import Home from './componets/Home';
 import Arrays from './componets/Arrays';
+import Loops from './componets/Loops';
 
-
+//p1
 import N1 from './P1/Level1';
 import N2 from './P1/Level2';
 import N3 from './P1/Level3';
@@ -16,12 +17,18 @@ import N7 from './P1/Level7';
 import N8 from './P1/Level8';
 import N9 from './P1/Level9';
 import N10 from './P1/Level10';
-
+//p2
 import N11 from './P2/Level11';
 import N12 from './P2/Level12';
 import N13 from './P2/Level13';
-import N14 from './P2/Level14';
-// import N15 from './P2/Level15';
+
+//P3';
+
+
+import N14 from './P3/Level14';
+import N15 from './P3/Level15';
+import N16 from './P3/Level16';
+
 
 import LinkSoon from './componets/comingSoon'
 
@@ -34,8 +41,10 @@ function App() {
      
       </Route>
 
+        {/* This one is the one  of the side bar */}
       <Route path="/" element={<Layout2 />}>
         <Route path="condicionals" element={<Arrays />} />
+        <Route path="loops" element={<Loops />} />
       </Route>
 
         <Route path="level1" element={<N1 />} />
@@ -51,8 +60,14 @@ function App() {
         
         <Route path="level11" element={<N11 />} />
         <Route path="level12" element={<N12 />} />
+
+
         <Route path="level13" element={<N13 />} />
         <Route path="level14" element={<N14 />} />
+        <Route path="level15" element={<N15 />} />
+        <Route path="level16" element={<N16 />} />
+       
+      
 
         
         {/* This one is the one to go to coming soon */}
