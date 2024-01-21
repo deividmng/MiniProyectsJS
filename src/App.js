@@ -1,10 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './componets/Layout';
-import Layout2 from './componets/Layout2';
+// import Layout2 from './componets/Layout2';
 import Home from './componets/Home';
 import Arrays from './componets/Arrays';
 import Loops from './componets/Loops';
+import Objects from './componets/Objects';
+import ComingSoon from './componets/comingSoon';
+
+// import LinkSoon from './componets/comingSoon'
 
 //p1
 import N1 from './P1/Level1';
@@ -29,23 +33,28 @@ import N14 from './P3/Level14';
 import N15 from './P3/Level15';
 import N16 from './P3/Level16';
 
+import N17 from './P4/Level17';
+import N18 from './P4/Level18';
+import N19 from './P4/Level19';
 
-import LinkSoon from './componets/comingSoon'
+
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="Arrays" element={<Arrays />} />
+        <Route path="condicionals" element={<Arrays />} />
+        <Route path="loops" element={<Loops />} />
+        <Route path="Objects" element={<Objects />} />
      
       </Route>
 
         {/* This one is the one  of the side bar */}
-      <Route path="/" element={<Layout2 />}>
+      {/* <Route path="/" element={<Layout2 />}>
         <Route path="condicionals" element={<Arrays />} />
         <Route path="loops" element={<Loops />} />
-      </Route>
+      </Route> */}
 
         <Route path="level1" element={<N1 />} />
         <Route path="level2" element={<N2 />} />
@@ -67,11 +76,15 @@ function App() {
         <Route path="level15" element={<N15 />} />
         <Route path="level16" element={<N16 />} />
        
+        <Route path="level17" element={<N17 />} />
+        <Route path="level18" element={<N18 />} />
+        <Route path="level19" element={<N19 />} />
+       
       
 
         
         {/* This one is the one to go to coming soon */}
-        <Route path="comingSoon" element={<LinkSoon />} />
+        <Route path="comingSoon" element={<ComingSoon />} />
        
     </Routes>
   );

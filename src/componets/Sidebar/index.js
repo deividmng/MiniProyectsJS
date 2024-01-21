@@ -32,6 +32,10 @@ const Sidebar = () => {
         <NavLink exact activeClassName="active" to="/loops">
           <p>Loops</p>
         </NavLink>
+        
+        <NavLink exact activeClassName="active" to="../Objects">
+          <p>Objects</p>
+        </NavLink>
         {/* Uncomment the lines below if needed */}
         {/* <NavLink exact activeClassName="active" className="contact-link" to="/">
           <p>Level 1</p>
