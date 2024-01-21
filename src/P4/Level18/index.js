@@ -4,28 +4,56 @@ import { MdHome } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "../../scss/app.scss";
-import "./index.scss";
-import Slch from "../../assets/images/imgSolutions3/level15h.png";
-import Slcj from "../../assets/images/imgSolutions3/level15j.png";
+import"./index.scss"
+import Slch from "../../assets/images/imgSolutions2/level11h.png";
+import Slcj from "../../assets/images/imgSolutions2/level11j.png";
 import Eye from "../../assets/images/ojo.png";
 
 const Level = () => {
   const imageRef = useRef();
   const [showImages, setShowImages] = useState(false);
   const [showSlider, setShowSlider] = useState(false);
-  const [length, setLength] = useState(5);
-  const [id, setId] = useState("");
+  const [incomes, setIncomes] = useState([]);
+  const [totalIncome, setTotalIncome] = useState(4000);
+  const [expenses, setExpenses] = useState([]);
+  const [totalExpense, setTotalExpense] = useState(0);
 
-  const generateId = () => {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const handleAddIncome = () => {
+    const incomeDescription =
+      document.getElementById("income-description").value;
+    const incomeAmount = document.getElementById("income-amount").value;
 
-    let newId = "";
-    for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      newId += characters.charAt(randomIndex);
+    if (incomeDescription && incomeAmount) {
+      setIncomes([
+        ...incomes,
+        { description: incomeDescription, amount: parseFloat(incomeAmount) },
+      ]);
+      setTotalIncome(totalIncome + parseFloat(incomeAmount));
+      document.getElementById("income-description").value = "";
+      document.getElementById("income-amount").value = "";
+    } else {
+      alert("Please enter both description and amount.");
     }
+  };
 
-    setId(newId);
+  const handleAddExpense = () => {
+    const expenseDescription = document.getElementById(
+      "expense-description"
+    ).value;
+    const expenseAmount = document.getElementById("expense-amount").value;
+
+    if (expenseDescription && expenseAmount) {
+      setExpenses([
+        ...expenses,
+        { description: expenseDescription, amount: parseFloat(expenseAmount) },
+      ]);
+      setTotalExpense(totalExpense + parseFloat(expenseAmount));
+      setTotalIncome(totalIncome - parseFloat(expenseAmount)); // Actualizar balance
+      document.getElementById("expense-description").value = "";
+      document.getElementById("expense-amount").value = "";
+    } else {
+      alert("Please enter both description and amount.");
+    }
   };
 
   const toggleImages = () => {
@@ -36,44 +64,80 @@ const Level = () => {
   return (
     <div className="level-container">
       <div className="links">
-        <Link to="../Level14">
+        <Link to="../Level17">
           <FaArrowCircleLeft />
         </Link>
-        <Link to="/loops">
+        <Link to="/Objects">
           <MdHome />
         </Link>
         <div ref={imageRef} onClick={toggleImages}>
           <img className="eye" src={Eye} alt="developer" />
         </div>
-        <Link to="../Level16">
+        <Link to="/Objects">
           <FaArrowAltCircleRight />
         </Link>
       </div>
 
-        <h2>Random Password Generator</h2>
-      <div className="container-b">
-        <div className="center-loop">
+      <div className="container">
+        <h2>Personal Account</h2>
+        
+
+        <div id="incomes" className="incomes">
+          <p className="P">Incomes</p>
+          
           <input
-            type="number"
-            id="length"
-            placeholder="Enter length of the Password"
-            value={length}
-            onChange={(event) => setLength(event.target.value)}
+            type="text"
+            id="income-description"
+            placeholder="Description"
           />
-          <button className="btn-green" onClick={generateId}>Generate Password</button>
-          <p >{id}</p>
+          <input type="number" id="income-amount" placeholder="Amount" />
+          <br></br>
+          <button id="add-income"   className="btn-green"  onClick={handleAddIncome}>
+            Add Income
+          </button>
+          <ul>
+            {incomes.map((income) => (
+              <li key={income.description}>
+                {income.description} - {income.amount}
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <div id="expenses" className="incomes">
+          <p className="P">Expenses</p>
+          <input
+            type="text"
+            id="expense-description"
+            placeholder="Description"
+          />
+          <input type="number" id="expense-amount" placeholder="Amount" />
+          <br></br>
+          <button id="add-expense"  className="btn-green"  onClick={handleAddExpense}>
+            Add Expense
+          </button>
+          <ul>
+            {expenses.map((expense) => (
+              <li key={expense.description}>
+                {expense.description} - {expense.amount}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div id="balance" className={`balance ${totalIncome - totalExpense < 1000 ? 'negative' : totalIncome - totalExpense < 2000 ? 'neutral' : 'positive'}`}>
+  <h2>
+    Balance: <span id="balance-display">{totalIncome - totalExpense}</span> £
+  </h2>
+</div>
       </div>
 
       <div className="explanation">
         <p className="text-center">Exercise</p>
         <p className="text-center">
-        Develop a small script which generate any number of characters random id:
+        Create an app that counts the money you have in your bank account and that you can add the expenses you are going to have and the income you will have, and do the calculation and the money you have comes out
         </p>
-        <p className="text-center">Explanation</p>
-        <p className="text-center">
-        With this code we can create a random password, we use "  Math.floor(Math.random() " to get a random number
-        </p>
+      
       </div>
       <div className={showSlider ? "Slider2 visible" : "Slider2"}>
         {showImages && (

@@ -3,8 +3,8 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Eye from "../../assets/images/icons/icons8-idea.svg";
 // import "../../scss/app.scss";
-import Hp1 from "../../assets/helpimg/helpLoops1.png";
-import Hp2 from "../../assets/helpimg/helpLoops2.png";
+import Hp1 from "../../assets/helpimg/helpObj.png";
+
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -68,7 +68,7 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className="card">
+        {/* <div className="card">
           <p>Exercise: </p>
           <Link to="../Level19">
             <div style={{ fontSize: "12.5em" }}>
@@ -78,7 +78,7 @@ const Home = () => {
               </div>
             </div>
           </Link>
-        </div>
+        </div> */}
 
         {/* <div className="card"> */}
           {/* Nuevo enlace y ruta */}
@@ -179,10 +179,7 @@ const Home = () => {
                 <div>
                   <img className="" src={Hp1} alt="clue" />
                 </div>
-                <div>
-                  <img className="" src={Hp2} alt="clue" />
-                </div>
-               
+                
               </Slider>
             </>
           )}

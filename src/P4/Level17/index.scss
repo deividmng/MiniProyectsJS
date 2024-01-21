@@ -8,3 +8,29 @@
    
   }
   
+  .array-output-user {
+    font-family: monospace; 
+    background-color: rgba(196, 182, 182, 0.8); // Use rgba to set transparency
+    padding: 15px; 
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 23px;
+    margin-top: 10px;
+    line-height: 1.6; // Adjust line height for better readability
+    white-space: pre; // Preserve whitespace, so line breaks are respected
+  }
+
+
+  .object-container {
+    p {
+      color: white;
+      text-align: center;
+      font-size: 15px;
+    }
+ 
+    button {
+      display: block; /* Convierte el botón en un bloque para ocupar todo el ancho disponible */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+    }
+ }
+ 

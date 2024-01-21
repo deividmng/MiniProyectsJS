@@ -1,20 +1,52 @@
-.container-b {
-  margin-top: 10px;
+.P {
+   text-align: center;
+   font-size: 23px;
+   color: white;
+}
+
+.incomes {
   display: flex;
-  align-items: center;
-  justify-content: center; 
+  flex-direction: column; /* Centrar elementos verticalmente */
+  justify-content: center; /* Centrar elementos horizontalmente */
+  align-items: center; /* Centrar elementos verticalmente en caso de múltiples líneas */
+  height: 100%; /* Altura completa del contenedor principal, si lo hay */
+
   input {
-    border-radius: 30px;
-    
+    margin: 5px;
+    font-size: 25px;
   }
-
-  button{
-    margin-top: 10px;
-  }
-
-   p {
+  li {
+   
     font-size: 22px;
-    color: white;
-    text-align: center;
-   }
+  }
+}
+
+#balance {
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  font-size: 30px;
+
+  &.balance {
+    color: black;
+    font-weight: bold;
+
+    &.negative {
+    
+      background-color: red;
+      opacity: 0.6;
+    }
+
+    &.positive {
+      color: green;
+      background-color: green;
+      opacity: 0.6;
+    }
+
+    &.neutral {
+      color: orange;
+      background-color: orange ;
+      opacity: 0.6;
+    }
+  }
 }

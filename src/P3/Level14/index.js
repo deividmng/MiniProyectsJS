@@ -120,7 +120,7 @@ const Level = () => {
         <p className="text-center">
         Use for loop to iterate from 0 to 100 and print only prime numbers<br></br>
 
-Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+        Use for loop to iterate from 0 to 100 and print the sum of all numbers.
 
         </p>
 
