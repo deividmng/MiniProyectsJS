@@ -21,21 +21,15 @@ const Sidebar = () => {
         <img src={JS} alt="developer" />
       </Link>
       <nav>
-        <p className='level1'>Level 1</p>
+        <p className='level1'>Level 222222</p>
         <NavLink exact activeClassName="active" to="/">
-          <p className='Level'>Booleans, Operators, Date</p>
+          <p className='Level'>parte 2</p>
         </NavLink>
         <NavLink exact activeClassName="active" className="about-link" to="/condicionals">
           <p>Arrays</p>
         </NavLink>
 
-        <NavLink exact activeClassName="active" to="/loops">
-          <p>Loops</p>
-        </NavLink>
-        
-        <NavLink exact activeClassName="active" to="../Objects">
-          <p>Objects</p>
-        </NavLink>
+      
         {/* Uncomment the lines below if needed */}
         {/* <NavLink exact activeClassName="active" className="contact-link" to="/">
           <p>Level 1</p>
@@ -49,7 +43,7 @@ const Sidebar = () => {
           {open ? (
             <ul className="menu">
               <li className="menu-item">
-                <Link to="../higher">
+                <Link to="../comingSoon">
                   <button onClick={handleMenuOne}>level2</button>
                 </Link>
               </li>

@@ -1,12 +1,4 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Layout from './componets/Layout';
-// import Layout2 from './componets/Layout2';
-import Home from './componets/Home';
-import Arrays from './componets/Arrays';
-import Loops from './componets/Loops';
-import Objects from './componets/Objects';
-import ComingSoon from './componets/comingSoon';
+
 
 // import LinkSoon from './componets/comingSoon'
 
@@ -37,6 +29,17 @@ import N17 from './P4/Level17';
 import N18 from './P4/Level18';
 import N19 from './P4/Level19';
 
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './componets/Layout';
+import Layout2 from './comopents2/Layout';
+import Home from './componets/Home';
+// import Home2 from '../comopents2/Home2';
+import Arrays from './componets/Arrays';
+import Loops from './componets/Loops';
+import Objects from './componets/Objects';
+import HigherFunction from './componets/HigherFunction';
+import ComingSoon from './componets/comingSoon';
 
 
 function App() {
@@ -50,11 +53,12 @@ function App() {
      
       </Route>
 
-        {/* This one is the one  of the side bar */}
-      {/* <Route path="/" element={<Layout2 />}>
-        <Route path="condicionals" element={<Arrays />} />
-        <Route path="loops" element={<Loops />} />
-      </Route> */}
+        This one is the one  of the side bar
+      <Route path="/" element={<Layout2 />}>
+       {/* <Route   path="../comopents2/Home2" element={<Home2 />} /> */}
+        {/* <Route path="condicionals" element={<Arrays />} /> */}
+        <Route path="higher" element={<HigherFunction />} />
+      </Route>
 
         <Route path="level1" element={<N1 />} />
         <Route path="level2" element={<N2 />} />
