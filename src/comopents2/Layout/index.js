@@ -7,7 +7,7 @@ const Layout2 = () => {
         <div className='App'>
             <Sidebar />
             <div className='page'>
-                <h1>calling for the layout2</h1>
+         
                 <Outlet />
             </div>
         </div>

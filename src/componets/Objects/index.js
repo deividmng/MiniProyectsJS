@@ -3,7 +3,10 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Eye from "../../assets/images/icons/icons8-idea.svg";
 // import "../../scss/app.scss";
-import Hp1 from "../../assets/helpimg/helpObj.png";
+import Hp1 from "../../assets/helping2/part.png";
+import Hp2 from "../../assets/helping2/partLevel2-2.png";
+import Hp3 from "../../assets/helping2/partLevel2-3.png";
+import Hp4 from "../../assets/helping2/partLevel2.png";
 
 
 import Slider from "react-slick";
@@ -18,7 +21,7 @@ import {
   //  RiNumber6,
   RiNumber7,
   RiNumber8,
-  RiNumber9,
+  //RiNumber9,
   // RiNumber0,
 } from "react-icons/ri";
 
@@ -36,7 +39,7 @@ const Home = () => {
   return (
     <>
       <div className="text-array">
-        <h2>Objects </h2>
+        <h2>Objects</h2>
         <div ref={imageRef} onClick={toggleImages}>
           <img className="idea" src={Eye} alt="developer"></img>
         </div>
@@ -178,6 +181,15 @@ const Home = () => {
               <Slider>
                 <div>
                   <img className="" src={Hp1} alt="clue" />
+                </div>
+                <div>
+                  <img className="" src={Hp2} alt="clue" />
+                </div>
+                <div>
+                  <img className="" src={Hp3} alt="clue" />
+                </div>
+                <div>
+                  <img className="" src={Hp4} alt="clue" />
                 </div>
                 
               </Slider>

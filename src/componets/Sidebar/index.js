@@ -14,7 +14,7 @@ const Sidebar = () => {
   const handleMenuOne = () => {
     setOpen(false);
   };
-
+// this is the frist one side bar 
   return (
     <div className={`nav-bar ${open ? 'open' : ''}`}>
       <Link className='logo' to='/'>

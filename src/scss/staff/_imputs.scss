@@ -52,3 +52,24 @@
   
 }
 
+.buttonD {
+  &.dark-single {
+      --background: none;
+      --rectangle: #242836;
+      --success: #4BC793;
+  }
+  &.white-single {
+      --background: none;
+      --rectangle: #F5F9FF;
+      --arrow: #275efe;
+      --success: #275efe;
+      --shadow: rgba(10, 22, 50, .1);
+  }
+  &.dark {
+      --background: #242836;
+      --rectangle: #1C212E;
+      --arrow: #F5F9FF;
+      --text: #F5F9FF;
+      --success: #2F3545;
+  }
+}

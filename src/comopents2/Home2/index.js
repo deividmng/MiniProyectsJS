@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <div className="text">
-        <h2>Booleans, Operators, Date</h2>
+        <h2>Booleans, Operators, Date2</h2>
       </div>
 
       <div className="container-card">

@@ -2,6 +2,18 @@
 
 // import LinkSoon from './componets/comingSoon'
 
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './componets/Layout';
+import Layout2 from './comopents2/Layout';
+import Home from './componets/Home';
+// import Home2 from '../comopents2/Home2';
+import Arrays from './componets/Arrays';
+import Loops from './componets/Loops';
+import Objects from './componets/Objects';
+import HigherFunction from './comopents2/HigherFunction';
+import ComingSoon from './componets/comingSoon';
+
 //p1
 import N1 from './P1/Level1';
 import N2 from './P1/Level2';
@@ -29,17 +41,14 @@ import N17 from './P4/Level17';
 import N18 from './P4/Level18';
 import N19 from './P4/Level19';
 
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Layout from './componets/Layout';
-import Layout2 from './comopents2/Layout';
-import Home from './componets/Home';
-// import Home2 from '../comopents2/Home2';
-import Arrays from './componets/Arrays';
-import Loops from './componets/Loops';
-import Objects from './componets/Objects';
-import HigherFunction from './componets/HigherFunction';
-import ComingSoon from './componets/comingSoon';
+
+// Part 2 od the proyect 
+
+import N20 from './Level2P5/level1';
+
+// import N20 from './comopents2/Level2P5/level2P1'
+
+
 
 
 function App() {
@@ -85,7 +94,7 @@ function App() {
         <Route path="level19" element={<N19 />} />
        
       
-
+        <Route path="level20" element={<N20 />} />
         
         {/* This one is the one to go to coming soon */}
         <Route path="comingSoon" element={<ComingSoon />} />

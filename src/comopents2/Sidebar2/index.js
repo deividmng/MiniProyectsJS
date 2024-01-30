@@ -21,9 +21,9 @@ const Sidebar = () => {
         <img src={JS} alt="developer" />
       </Link>
       <nav>
-        <p className='level1'>Level 222222</p>
-        <NavLink exact activeClassName="active" to="/">
-          <p className='Level'>parte 2</p>
+        <p className='level1'>Level 2</p>
+        <NavLink exact activeClassName="active" to="/higher">
+          <p className='Level'>Higher Order Functions link</p>
         </NavLink>
         <NavLink exact activeClassName="active" className="about-link" to="/condicionals">
           <p>Arrays</p>
