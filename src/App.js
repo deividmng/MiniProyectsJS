@@ -45,6 +45,9 @@ import N19 from './P4/Level19';
 // Part 2 od the proyect 
 
 import N20 from './Level2P5/level1';
+import N21 from './Level2P5/level2';
+import N22 from './Level2P5/level3';
+import N23 from './Level2P5/level4';
 
 // import N20 from './comopents2/Level2P5/level2P1'
 
@@ -95,6 +98,9 @@ function App() {
        
       
         <Route path="level20" element={<N20 />} />
+        <Route path="level21" element={<N21 />} />
+        <Route path="level22" element={<N22 />} />
+        <Route path="level23" element={<N23 />} />
         
         {/* This one is the one to go to coming soon */}
         <Route path="comingSoon" element={<ComingSoon />} />

@@ -3,10 +3,7 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Eye from "../../assets/images/icons/icons8-idea.svg";
 // import "../../scss/app.scss";
-import Hp1 from "../../assets/helping2/part.png";
-import Hp2 from "../../assets/helping2/partLevel2-2.png";
-import Hp3 from "../../assets/helping2/partLevel2-3.png";
-import Hp4 from "../../assets/helping2/partLevel2.png";
+import Hp1 from "../../assets/helpimg/helpObj.png";
 
 
 import Slider from "react-slick";
@@ -182,16 +179,8 @@ const Home = () => {
                 <div>
                   <img className="" src={Hp1} alt="clue" />
                 </div>
-                <div>
-                  <img className="" src={Hp2} alt="clue" />
-                </div>
-                <div>
-                  <img className="" src={Hp3} alt="clue" />
-                </div>
-                <div>
-                  <img className="" src={Hp4} alt="clue" />
-                </div>
-                
+            
+              
               </Slider>
             </>
           )}

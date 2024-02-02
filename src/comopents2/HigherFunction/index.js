@@ -24,11 +24,7 @@ import {
   // RiNumber0,
 } from "react-icons/ri";
 
-
-
-
 const Home = () => {
-
   const imageRef = useRef();
   const [showImages, setShowImages] = useState(false);
   const [showSlider, setShowSlider] = useState(false);
@@ -46,37 +42,29 @@ const Home = () => {
     }, 2250);
   };
 
-
   return (
     <>
-     
       <div className="text-array">
-      <h2>Higher Order Functions </h2>
-      <div className="aling" ref={imageRef} onClick={toggleImages}>
-  <div className="flex-container">
-    <img className="idea" src={Eye} alt="developer" />
-    <div className="btn-container">
-      <a
-        download="Higher.pdf"
-        className={`text-btn ${isClicked ? 'onclic' : ''}`}
-        onClick={handleClick}
-        href="./notes/Higher.pdf"
-      >
-      </a>
-    </div>
-  </div>
-</div>
-
-       
-
+        <h2>Higher Order Functions </h2>
+        <div className="aling" ref={imageRef} onClick={toggleImages}>
+          <div className="flex-container">
+            <img className="idea" src={Eye} alt="developer" />
+            <div className="btn-container">
+              <a
+                download="Higher.pdf"
+                className={`text-btn ${isClicked ? "onclic" : ""}`}
+                onClick={handleClick}
+                href="./notes/Higher.pdf" >
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-     
-     
 
       <div className="container-card">
         <div className="card">
           <Link to="../Level20">
-            <p>Exercise: </p>
+            <p>Exercise: level 2 </p>
             <div style={{ fontSize: "15em" }}>
               <RiNumber1 />
             </div>
@@ -85,8 +73,8 @@ const Home = () => {
         </div>
 
         <div className="card">
-          <Link to="../Level2">
-            <p>Exercise: </p>
+          <Link to="../Level21">
+            <p>Exercise: level 2 </p>
             <div style={{ fontSize: "15em" }}>
               <RiNumber2 />
             </div>
@@ -94,8 +82,8 @@ const Home = () => {
         </div>
 
         <div className="card">
-          <p>Exercise: </p>
-          <Link to="../Level3">
+          <p>Exercise: level 2 </p>
+          <Link to="../Level22">
             <div style={{ fontSize: "15em" }}>
               <RiNumber3 />
             </div>
@@ -104,14 +92,13 @@ const Home = () => {
 
         <div className="card">
           {/* Nuevo enlace y ruta */}
-          <Link to="../Level4">
+          <Link to="../Level23">
             <p>Exercise: </p>
             <div style={{ fontSize: "15em" }}>
               <RiNumber4 />
             </div>
           </Link>
         </div>
-
 
         <div className={showSlider ? "Slider2 visible" : "Slider2"}>
           {showImages && (
@@ -134,14 +121,11 @@ const Home = () => {
                 <div>
                   <img className="" src={Hp4} alt="clue" />
                 </div>
-               
               </Slider>
             </>
           )}
         </div>
       </div>
-
-    
     </>
   );
 };

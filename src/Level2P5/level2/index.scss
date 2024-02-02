@@ -1,0 +1,66 @@
+.container {
+   
+    align-items: center;
+    padding: 20px;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    label {
+      margin-bottom: 10px;
+        color: white;
+      display: flex;
+      flex-direction: column;
+        font-size: 22px;
+      align-items: center;
+    }
+  
+    input {
+      padding: 8px;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+     transition: 3s;
+     border: none;
+     
+      &:focus {
+        background-color: #555; 
+        outline: none; 
+        
+      }
+      &:not(:focus) {
+        background-color: white;
+      }
+    }
+
+
+    h3 {
+        font-size: 30px;
+        color: aliceblue;
+      }
+  
+    #showCountries {
+        display: flex;
+        flex-wrap: wrap;  // Allow the items to wrap to the next line if there's not enough space
+        margin-top: 20px;
+      
+        li {
+          font-size: 16px;
+          margin: 5px;
+          color: white;
+          list-style: none;
+          padding: 8px;  
+      
+        }
+      }
+      
+  }
+  
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

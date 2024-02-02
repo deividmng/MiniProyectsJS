@@ -1,0 +1,24 @@
+.container-country {
+    h1 {
+      color: white;
+      text-align: center;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+  
+    li {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  

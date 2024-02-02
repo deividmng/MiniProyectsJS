@@ -1,130 +1,129 @@
-import React, { useState, useRef } from 'react';
-// import './index.scss';
-import '../../scss/app.scss';
-import { Link } from 'react-router-dom';
-import { FaArrowCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
-import { MdHome } from 'react-icons/md';
-import Eye from '../../assets/images/ojo.png';
-import Sol1h from '../../assets/images/imgSolutions/level1h.png'
-import Sol1j from '../../assets/images/imgSolutions/level1j.png'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
+import React, { useState, useRef, useEffect } from "react";
+import { FaArrowCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { MdHome } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "../../scss/app.scss";
+import "./index.scss"
+import Slch from "../../assets/level2immg/ejercico1/level2-1html.png";
+import Slcj1 from "../../assets/level2immg/ejercico1/level2-1-j.png";
+import Slcj2 from "../../assets/level2immg/ejercico1/level2-j-2.png";
+import Slcj3 from "../../assets/level2immg/ejercico1/level2-j-3.png";
+import Eye from "../../assets/images/ojo.png";
 
 const Level = () => {
+  // Assuming you have the 'productos' state defined somewhere
+  const [productos, setProductos] = useState([
+    { producto: 'banana', precio: 3 },
+    { producto: 'banana', precio: 3 },
+    { producto: 'mango', precio: 6 },
+    { producto: 'patata', precio: 0 },
+    { producto: 'aguacate', precio: 8 },
+    { producto: 'café', precio: 10 },
+    { producto: 'té', precio: 0 },
+    // Add other products as needed
+  ]);
+  const imageRef = useRef();
   const [showImages, setShowImages] = useState(false);
+  const [showSlider, setShowSlider] = useState(false);
+  const [precioTotal, setPrecioTotal] = useState(0);
 
-  // Declare variables and assign values
-  let firstName = 'David';
-  let lastName = 'Exposito';
-  let country = 'Spain';
-  let city = 'Jaen';
-  let age = 30;
-  let isMarried = false;
-  let year = 2023;
+  useEffect(() => {
+    // Calculate total price whenever 'productos' changes
+    setPrecioTotal(productos.reduce((acumulador, producto) => acumulador + producto.precio, 0));
+  }, [productos]);
 
-  // Use typeof to check data types
-  console.log('Type of firstName:', typeof firstName);
-  console.log('Type of lastName:', typeof lastName);
-  console.log('Type of country:', typeof country);
-  console.log('Type of city:', typeof city);
-  console.log('Type of age:', typeof age);
-  console.log('Type of isMarried:', typeof isMarried);
-  console.log('Type of year:', typeof year);
+  const subirPrecio = (producto) => {
+    const productoEncontrado = productos.find((p) => p.producto === producto);
+    if (productoEncontrado) {
+      productoEncontrado.precio++;
+      setProductos([...productos]);
+    }
+  };
+
+  const bajarPrecio = (producto) => {
+    const productoEncontrado = productos.find((p) => p.producto === producto);
+    if (productoEncontrado && productoEncontrado.precio > 0) {
+      productoEncontrado.precio--;
+      setProductos([...productos]);
+    }
+  };
 
   const toggleImages = () => {
     setShowImages(!showImages);
+    setShowSlider(!showSlider);
   };
-
-  const imageRef = useRef(null);
-  
 
   return (
     <div className="level-container">
-
       <div className="links">
-        <Link to="/higher">
+        <Link to="../Level19">
           <FaArrowCircleLeft />
         </Link>
-        <Link to="/higher">
+        <Link to="/Higher">
           <MdHome />
         </Link>
         <div ref={imageRef} onClick={toggleImages}>
           <img className="eye" src={Eye} alt="developer" />
         </div>
-        <Link to="../Level2">
+        <Link to="../Level21">
           <FaArrowAltCircleRight />
         </Link>
       </div>
-      
-      <h2>User Information</h2>
 
-<div className='text-center'>
+      <div className="container">
+  
+        <div  className="container-producto">
+          <h2>Productos</h2>
+          <ul>
+            {productos.map((producto) => (
+              <li  key={producto.producto}>
+                {producto.producto}: ${producto.precio}
+                <button className="btn-green"  onClick={() => subirPrecio(producto.producto)}>Up Pricer</button>
+                <button  className="btn-green"  onClick={() => bajarPrecio(producto.producto)}>Lest price</button>
+              </li>
+            ))}
+          </ul>
+          <p>Precio total: ${precioTotal}</p>
+        </div>
+      </div>
 
-      <ul>
-        <li>
-          <span>First Name: {firstName}</span>
-        </li>
-        <li>
-          <span>Last Name: {lastName}</span>
-        </li>
-        <li>
-          <span>Country: {country}</span>
-        </li>
-        <li>
-          <span>City: {city}</span>
-        </li>
-        <li>
-          <span>Age: {age}</span>
-        </li>
-        <li>
-          <span>Marital Status: {isMarried ? 'Married' : 'Single'}</span>
-        </li>
-        <li>
-          <span>Year: {year}</span>
-        </li>
-      </ul>
-</div>
-      
+      <div className="explanation">
+        <p className="text-center">Exercise</p>
+        <p className="text-center">{/* Add exercise text */}</p>
+        <p className="text-center">Explanation</p>
+        <p className="text-center">{/* Add explanation text */}</p>
+      </div>
 
-      <p className="text-center">Ejercicio</p>
-      <p className="text-center">
-        Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the
-        typeof operator to check different data types.
-      </p>
-      <p className="text-center">Explanation</p>
-      <p className="text-center">
-        This component displays user information with different data types.
-      </p>
-        
-
-      <div className='Slider'>
+      <div className={showSlider ? "Slider2 visible" : "Slider2"}>
         {showImages && (
           <>
-            <div className='align-right'>
-
-            <button className="close-button" onClick={toggleImages}>
-              X
-            </button>
+            <div className="align-right">
+              <button className="close-button" onClick={toggleImages}>
+                X
+              </button>
             </div>
             <Slider>
-              
               <div>
-                <img className="" src={Sol1h} alt="developer" />
+                <img className="" src={Slch} alt="SolutionsHtml" />
                 <p>HTML</p>
               </div>
               <div>
-                <img className="" src={Sol1j} alt="developer" />
+                <img className="" src={Slcj1} alt="SolutionJS" />
+                <p>JS</p>
               </div>
               <div>
-                <img className="" src={Sol1h} alt="developer" />
+                <img className="" src={Slcj2} alt="SolutionJS" />
+                <p>JS</p>
+              </div>
+              <div>
+                <img className="" src={Slcj3} alt="SolutionJS" />
+                <p>JS</p>
               </div>
             </Slider>
           </>
         )}
       </div>
-      
     </div>
   );
 };
