@@ -14,28 +14,25 @@ const Sidebar = () => {
   const handleMenuOne = () => {
     setOpen(false);
   };
-// this is the frist one side bar 
+
   return (
     <div className={`nav-bar ${open ? 'open' : ''}`}>
       <Link className='logo' to='/'>
         <img src={JS} alt="developer" />
       </Link>
       <nav>
-        <p className='level1'>Level 1</p>
-        <NavLink exact activeClassName="active" to="/">
-          <p className='Level'>Booleans, Operators, Date</p>
+        <p className='level1'>Level 2</p>
+        <NavLink exact activeClassName="active" to="/higher">
+          <p className='Level'>Higher Order Functions link</p>
         </NavLink>
-        <NavLink exact activeClassName="active" className="about-link" to="/condicionals">
-          <p>Arrays</p>
+        <NavLink exact activeClassName="active" className="about-link" to="/SetAndMaps">
+          <p> Sets and Maps</p>
+        </NavLink>
+        <NavLink exact activeClassName="active" className="about-link" to="/DestructuringAndSpreading">
+          <p> Destructuring and Spreading</p>
         </NavLink>
 
-        <NavLink exact activeClassName="active" to="/loops">
-          <p>Loops</p>
-        </NavLink>
-        
-        <NavLink exact activeClassName="active" to="../Objects">
-          <p>Objects</p>
-        </NavLink>
+      
         {/* Uncomment the lines below if needed */}
         {/* <NavLink exact activeClassName="active" className="contact-link" to="/">
           <p>Level 1</p>
@@ -53,10 +50,12 @@ const Sidebar = () => {
                   <button onClick={handleMenuOne}>level2</button>
                 </Link>
               </li>
-              {/* Add when level 2 it needed */}
-              {/* <li className="menu-item">
-                <button onClick={handleMenuTwo}>Menu 2</button>
-              </li> */}
+              <li className="menu-item">
+                <Link to="../comingSoon">
+                  <button onClick={handleMenuOne}>level3</button>
+                </Link>
+              </li>
+             
             </ul>
           ) : null}
         </div>

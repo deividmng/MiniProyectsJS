@@ -1,0 +1,28 @@
+Destructuring
+
+Unpacks values from arrays or objects into separate variables.
+Makes code more concise and readable.
+Destructuring Arrays:
+
+Extract specific elements by their indices.
+Skip elements with commas.
+Assign default values to handle undefined elements.
+Use the rest operator (...) to capture remaining elements as a new array.
+Destructuring Objects:
+
+Extract properties by their names.
+Rename properties during destructuring.
+Assign default values for missing properties.
+Spread Operator (...)
+
+Expands iterables (arrays, objects) into individual elements.
+Used for:
+Copying arrays or objects.
+Combining arrays or objects.
+Accepting unlimited function arguments.
+Key Uses:
+
+Structuring function parameters: Extract values directly from arguments.
+Iterating over arrays of objects: Access properties concisely.
+Combining and copying arrays/objects: Create new collections efficiently.
+Creating flexible functions: Handle variable-length argument lists.

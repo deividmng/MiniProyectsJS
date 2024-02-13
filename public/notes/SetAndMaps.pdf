@@ -1,0 +1,36 @@
+Sets:
+
+Unique elements: Only store unique values, removing duplicates.
+Creating:
+new Set() creates an empty set.
+new Set(array) creates a set from an array.
+Adding elements: set.add(element)
+Removing elements: set.delete(element)
+Checking for elements: set.has(element)
+Iterating:
+for...of loop to iterate over elements.
+set.forEach(callback) to execute a function for each element.
+Common operations:
+set.size returns the number of elements.
+set.clear() removes all elements.
+Union, intersection, and difference can be performed using methods like spread operator and filter.
+Maps:
+
+Key-value pairs: Store data as key-value pairs, similar to objects but with more features.
+Creating:
+new Map() creates an empty map.
+new Map(array) creates a map from an array of key-value pairs.
+Adding values: map.set(key, value)
+Getting values: map.get(key)
+Checking for keys: map.has(key)
+Iterating:
+for...of loop to iterate over key-value pairs as arrays.
+map.forEach(callback) to execute a function for each key-value pair.
+Common operations:
+map.size returns the number of key-value pairs.
+map.delete(key) removes the key-value pair with the given key.
+Key differences:
+
+Sets only store values, while Maps store key-value pairs.
+Sets are unordered, while Maps maintain key order (insertion order).
+Sets are used for unique collections, while Maps are used for associative data structures.

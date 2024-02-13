@@ -1,0 +1,46 @@
+
+
+.app-container {
+ 
+  margin: 20px auto;
+  background-color: #9f8d8d;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2, h3 ,li{
+    color: #333;
+  }
+
+  p {
+    
+    font-size: 14px;
+  }
+
+
+  .student-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .student-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+     
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      margin: 0 10px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        color: black;
+        font-size: 17px;
+
+        li {
+          margin-bottom: 5px;
+          color: black;
+        }
+      }
+    }
+  }
+}

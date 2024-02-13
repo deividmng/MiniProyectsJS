@@ -18,7 +18,7 @@ import {
   //  RiNumber6,
   RiNumber7,
   RiNumber8,
-  RiNumber9,
+  //RiNumber9,
   // RiNumber0,
 } from "react-icons/ri";
 
@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <>
       <div className="text-array">
-        <h2>Objects </h2>
+        <h2>Objects</h2>
         <div ref={imageRef} onClick={toggleImages}>
           <img className="idea" src={Eye} alt="developer"></img>
         </div>
@@ -179,7 +179,8 @@ const Home = () => {
                 <div>
                   <img className="" src={Hp1} alt="clue" />
                 </div>
-                
+            
+              
               </Slider>
             </>
           )}

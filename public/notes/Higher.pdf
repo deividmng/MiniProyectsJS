@@ -1,0 +1,80 @@
+Higher Order Functions and Callbacks:
+javascript
+Copy code
+// Callback function
+const callback = (n) => n ** 2;
+
+// Higher order function using a callback
+function cube(callback, n) {
+  return callback(n) * n;
+}
+
+console.log(cube(callback, 3));
+
+// Higher order function returning another function
+const higherOrder = n => {
+  const doSomething = m => {
+    const doWhatever = t => 2 * n + 3 * m + t;
+    return doWhatever;
+  }
+  return doSomething;
+}
+
+console.log(higherOrder(2)(3)(10));
+Using Callbacks in forEach:
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+
+// Using callback function in forEach
+let sum = 0;
+numbers.forEach(num => sum += num);
+console.log(sum); // 15
+Timing Functions:
+javascript
+Copy code
+// setInterval
+function sayHello() {
+  console.log('Hello');
+}
+
+setInterval(sayHello, 1000); // Prints 'Hello' every second
+
+// setTimeout
+setTimeout(sayHello, 2000); // Prints 'Hello' after waiting for 2 seconds
+Functional Programming with Array Methods:
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+
+// Using map to square each number
+const numbersSquare = numbers.map(num => num * num);
+console.log(numbersSquare); // [1, 4, 9, 16, 25]
+
+// Using filter to get countries with 5 letters
+const countriesHaveFiveLetters = countries.filter(country => country.length === 5);
+console.log(countriesHaveFiveLetters); // ['Japan', 'Kenya']
+
+// Using reduce to get the sum of numbers
+const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+console.log(sum); // 15
+
+// Using sort to sort numbers in ascending order
+numbers.sort((a, b) => a - b);
+console.log(numbers); // [1, 2, 3, 4, 5]
+Array Methods for Functional Programming:
+javascript
+Copy code
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+
+// Using every to check if all elements are strings
+const areAllStr = names.every(name => typeof name === 'string');
+console.log(areAllStr); // true
+
+// Using find to get the first element with length > 7
+const result = names.find(name => name.length > 7);
+console.log(result); // Asabeneh
+
+// Using some to check if some elements are numbers
+const areSomeNumbers = names.some(name => typeof name === 'number');
+console.log(areSomeNumbers); // false

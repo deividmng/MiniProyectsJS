@@ -1,0 +1,43 @@
+.container-people {
+  h2 {
+    font-size: 22px;
+  }
+
+  .btn-green {
+    margin: 5px 13px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+
+  li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+  }
+}
+
+.all-btn {
+  display: flex;
+  justify-content: center;
+  button {
+    cursor: pointer;
+
+    padding: 22px;
+    border: none;
+    margin: 10px;
+  }
+}
+
+.selected-stat {
+  color: white;
+  font-size: 33px;
+  text-align: center;
+}
