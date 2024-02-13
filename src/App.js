@@ -13,6 +13,8 @@ import Loops from './componets/Loops';
 import Objects from './componets/Objects';
 import HigherFunction from './comopents2/HigherFunction';
 import ComingSoon from './componets/comingSoon';
+import SetAndMap from './comopents2/SetAndMaps';
+import DestructuringAndSpreading from './comopents2/DestructuringAndSpreading';
 
 //p1
 import N1 from './P1/Level1';
@@ -48,6 +50,9 @@ import N20 from './Level2P5/level1';
 import N21 from './Level2P5/level2';
 import N22 from './Level2P5/level3';
 import N23 from './Level2P5/level4';
+import N24 from './Level2P6/level5';
+import N25 from './Level2P6/level6';
+import N26 from './Level2P6/level7';
 
 // import N20 from './comopents2/Level2P5/level2P1'
 
@@ -70,6 +75,8 @@ function App() {
        {/* <Route   path="../comopents2/Home2" element={<Home2 />} /> */}
         {/* <Route path="condicionals" element={<Arrays />} /> */}
         <Route path="higher" element={<HigherFunction />} />
+        <Route path="SetAndMaps" element={<SetAndMap />} />
+        <Route path="DestructuringAndSpreading" element={<DestructuringAndSpreading />} />
       </Route>
 
         <Route path="level1" element={<N1 />} />
@@ -101,6 +108,9 @@ function App() {
         <Route path="level21" element={<N21 />} />
         <Route path="level22" element={<N22 />} />
         <Route path="level23" element={<N23 />} />
+        <Route path="level24" element={<N24 />} />
+        <Route path="level25" element={<N25 />} />
+        <Route path="level26" element={<N26 />} />
         
         {/* This one is the one to go to coming soon */}
         <Route path="comingSoon" element={<ComingSoon />} />

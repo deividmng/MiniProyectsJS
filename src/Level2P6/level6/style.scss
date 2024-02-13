@@ -1,0 +1,34 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: white;
+}
+
+th {
+    background-color: #656161;
+}
+
+.p-skill{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+
+.zoomable-image {
+    transition: transform 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    &.zoomed {
+      transform: scale(1.1);
+    }
+  }
